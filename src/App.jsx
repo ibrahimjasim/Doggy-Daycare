@@ -21,7 +21,6 @@ const App = () => {
         <Route path="/dogs/:id" element={<DogDetailPage />} />
       </Routes>
     </HashRouter>
-    // <DogData />
   );
 };
 
