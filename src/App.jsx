@@ -3,6 +3,7 @@ import WelcomePage from "./components/WelcomePage";
 import CatalogPage from "./components/CatalogPage";
 import DogDetailPage from "./components/DogDetailPage";
 import "./App.css";
+import DogData from "./components/DogData";
 
 // HashRouter används istället för BrowserRouter eftersom GitHub Pages
 // är statisk hosting och inte klarar direktladdning av under-URL:er
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/dogs/:id" element={<DogDetailPage />} />
       </Routes>
     </HashRouter>
+    // <DogData />
   );
 };
 
