@@ -1,13 +1,528 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>doggy-daycare</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skogsgläntan Hunddagis — Ett andra hem i skogsbrynet</title>
+    <meta name="description" content="Hunddagis med dagliga skogspromenader, små grupper och massor av frisk luft. Boka en introträff hos Skogsgläntan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Skogsgläntan Hunddagis, startsida">
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 3C10 3 5 9 5 16c0 8 5 13 12 15 7-2 12-7 12-15 0-7-5-13-12-13Z" fill="#566447" />
+                    <path d="M12 14c1.5 3 2.5 6 2.5 9M22 14c-1.5 3-2.5 6-2.5 9" stroke="#F3ECDC" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+                Skogsgläntan
+            </a>
+
+            <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Hem</a></li>
+                    <li><a href="om-oss.html">Om oss</a></li>
+                    <li><a href="#dagen">En dag hos oss</a></li>
+                    <li><a href="tjanster.html">Tjänster</a></li>
+                    <li><a href="priser.html">Priser</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+                <a href="kontakt.html" class="btn btn-primary">Boka introträff</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section aria-labelledby="hero-heading">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <h1 id="hero-heading">Ett andra hem i skogsbrynet</h1>
+                    <p class="hero-lead">
+                        Hos Skogsgläntan får din hund fasta rutiner, riktiga skogspromenader och en liten,
+                        trygg grupp att vara del av — varje dag, oavsett väder.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="kontakt.html" class="btn btn-primary">Boka introträff</a>
+                        <a href="tjanster.html" class="btn btn-ghost">Se våra tjänster</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" role="img" aria-label="Hundar som leker tillsammans på en skogspromenad">
+                    <div class="hero-visual-main"></div>
+                    <div class="hero-visual-accent"></div>
+                    <span class="hero-visual-note">Foto: hundarna på förmiddagspromenad<br>— byt ut mot egna bilder</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <ul class="trust-strip">
+                    <li><strong>Max 8</strong> hundar per grupp</li>
+                    <li><strong>3</strong> skogspromenader varje dag</li>
+                    <li><strong>06.30–18.30</strong> öppettider vardagar</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SCHEDULE -->
+        <section id="dagen" class="section-alt" aria-labelledby="dagen-heading">
+            <div class="container">
+                <div class="section-intro">
+                    <h2 id="dagen-heading">En dag hos oss</h2>
+                    <p>Hundarna trivs bäst med förutsägbarhet. Så här brukar en vanlig dag se ut.</p>
+                </div>
+
+                <ol class="timeline">
+                    <li>
+                        <span class="timeline-time">06.30</span>
+                        <div class="timeline-content">
+                            <h3>Öppning & morgonhälsning</h3>
+                            <p>Lugn incheckning, en och en, så att alla får landa innan gruppen samlas.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="timeline-time">08.30</span>
+                        <div class="timeline-content">
+                            <h3>Första skogspromenaden</h3>
+                            <p>Vi går de fasta stigarna i skogen bakom gården — nya dofter, lagom tempo.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="timeline-time">12.00</span>
+                        <div class="timeline-content">
+                            <h3>Lugn stund & vila</h3>
+                            <p>Mat för de som äter dagtid, sedan vila inomhus medan dagens värme lägger sig.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="timeline-time">14.00</span>
+                        <div class="timeline-content">
+                            <h3>Fri lek i hägnet</h3>
+                            <p>Bollar, vattenpölar och gruppens egna lekar — alltid med en hundvakt på plats.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="timeline-time">16.00</span>
+                        <div class="timeline-content">
+                            <h3>Eftermiddagspromenad</h3>
+                            <p>En kortare runda för att varva ner inför hämtning.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="timeline-time">17.00–18.30</span>
+                        <div class="timeline-content">
+                            <h3>Hämtning</h3>
+                            <p>Vi berättar kort hur dagen har varit innan ni går hem tillsammans.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section aria-labelledby="erbjuder-heading">
+            <div class="container offer-grid">
+                <div class="offer-lead">
+                    <h2 id="erbjuder-heading">Vad vi erbjuder</h2>
+                    <p>
+                        Vi tror på små grupper, mycket utevistelse och personal som kan varje hund
+                        vid namn. Ingen dag är identisk, men strukturen är alltid densamma.
+                    </p>
+                    <a href="tjanster.html" class="text-link">Läs mer om våra tjänster</a>
+                </div>
+
+                <ul class="offer-list">
+                    <li>
+                        <span class="offer-icon"><svg width="22" height="22" viewBox="0 0 26 26" fill="none"><path d="M4 20c4-10 14-10 18-16M4 20c6 1 12-1 16-6" stroke="#B07A3E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+                        <div>
+                            <h3>Dagomsorg, vardagar</h3>
+                            <p>Heldagar eller halvdagar, med fast grupp och fasta hundvakter.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="offer-icon"><svg width="22" height="22" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="9" stroke="#B07A3E" stroke-width="1.6" /><path d="M13 8v5l3.5 2" stroke="#B07A3E" stroke-width="1.6" stroke-linecap="round" /></svg></span>
+                        <div>
+                            <h3>Introträff</h3>
+                            <p>En avgiftsfri provdag så att din hund får vänja sig i sin egen takt.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="offer-icon"><svg width="22" height="22" viewBox="0 0 26 26" fill="none"><path d="M3 13h20M13 3v20" stroke="#B07A3E" stroke-width="1.6" stroke-linecap="round" /></svg></span>
+                        <div>
+                            <h3>Helg- & lovpassning</h3>
+                            <p>För de dagar den vanliga vardagsplaneringen inte räcker till.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="offer-icon"><svg width="22" height="22" viewBox="0 0 26 26" fill="none"><rect x="3" y="8" width="20" height="12" rx="2" stroke="#B07A3E" stroke-width="1.6" /><path d="M3 12h20" stroke="#B07A3E" stroke-width="1.6" /></svg></span>
+                        <div>
+                            <h3>Hämtning & lämning</h3>
+                            <p>Skjuts inom nära omgivning för familjer som saknar egen bil.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA-BANNER -->
+        <section class="cta-banner-wrap">
+            <div class="container">
+                <div class="cta-banner-inner">
+                    <div>
+                        <h2>Redo att hälsa på?</h2>
+                        <p>Boka en kostnadsfri introträff så ses vi i skogsbrynet.</p>
+                    </div>
+                    <a href="kontakt.html" class="btn btn-primary">Boka introträff</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER  -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Skogsgläntan</div>
+                    <p>Hunddagis i skogsbrynet, med dagliga promenader och små, trygga grupper.</p>
+                </div>
+                <div>
+                    <h4>Utforska</h4>
+                    <ul>
+                        <li><a href="om-oss.html">Om oss</a></li>
+                        <li><a href="tjanster.html">Tjänster</a></li>
+                        <li><a href="priser.html">Priser</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="tel:0700000000">070-000 00 00</a></li>
+                        <li><a href="mailto:hej@skogsglantan.se">hej@skogsglantan.se</a></li>
+                        <li>Skogsvägen 12, 430 00</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Öppettider</h4>
+                    <ul>
+                        <li>Mån–fre: 06.30–18.30</li>
+                        <li>Lov & helg: efter behov</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Skogsgläntan Hunddagis</span>
+                <span>Org.nr 000000-0000</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        navToggle.addEventListener('click', () => {
+            const isOpen = mainNav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    </script>
+
+    <style>
+        /* Specific styling for index.html*/
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 56px;
+            align-items: center;
+            padding-top: 56px;
+        }
+
+        @media (max-width: 860px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                padding-top: 24px;
+            }
+        }
+
+        .hero-lead {
+            font-size: 1.1rem;
+            max-width: 46ch;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .hero-visual {
+            position: relative;
+            aspect-ratio: 4 / 3.6;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-visual-main {
+            position: absolute;
+            inset: 0;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(155deg, #C7B27E 0%, #A6875A 55%, #7C6B44 100%);
+        }
+
+        .hero-visual-accent {
+            position: absolute;
+            width: 34%;
+            aspect-ratio: 1;
+            right: -16px;
+            bottom: -16px;
+            background: var(--color-moss);
+            border-radius: var(--radius-soft);
+        }
+
+        .hero-visual-note {
+            position: relative;
+            z-index: 1;
+            margin: 22px;
+            font-size: 0.78rem;
+            color: var(--color-white);
+            background: rgba(51,39,28,0.55);
+            padding: 10px 16px;
+            border-radius: var(--radius-soft);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 500px) {
+            .hero-visual {
+                aspect-ratio: 4 / 3.2;
+            }
+
+            .hero-visual-accent {
+                right: -8px;
+                bottom: -8px;
+                width: 30%;
+            }
+        }
+
+        .trust-strip {
+            list-style: none;
+            display: flex;
+            gap: 0;
+            margin: 64px 0 0;
+            padding: 30px 12px;
+            background: var(--color-cream-soft);
+            border-radius: var(--radius-lg);
+            color: var(--color-bark-soft);
+            font-size: 0.95rem;
+        }
+
+            .trust-strip li {
+                flex: 1;
+                text-align: center;
+                padding: 0 20px;
+                border-left: 1px solid var(--color-line);
+            }
+
+                .trust-strip li:first-child {
+                    border-left: none;
+                }
+
+            .trust-strip strong {
+                display: block;
+                font-family: var(--font-display);
+                font-size: 1.6rem;
+                color: var(--color-bark);
+                font-weight: 600;
+            }
+
+        @media (max-width: 620px) {
+            .trust-strip {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+                .trust-strip li {
+                    border-left: none;
+                    border-top: 1px solid var(--color-line);
+                    padding-top: 18px;
+                }
+
+                    .trust-strip li:first-child {
+                        border-top: none;
+                        padding-top: 0;
+                    }
+        }
+
+        .section-intro {
+            max-width: 54ch;
+            margin-bottom: 48px;
+        }
+
+        .timeline {
+            list-style: none;
+            margin: 0;
+            padding: 0 0 0 28px;
+            border-left: 2px dashed var(--color-clay);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+            .timeline li {
+                position: relative;
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                gap: 20px;
+                align-items: baseline;
+            }
+
+                .timeline li::before {
+                    content: "";
+                    position: absolute;
+                    left: -33px;
+                    top: 4px;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: var(--color-moss);
+                    border: 3px solid var(--color-cream-soft);
+                }
+
+        .timeline-time {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--color-clay);
+            font-size: 1.05rem;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 4px;
+        }
+
+        .timeline-content p {
+            margin: 0;
+        }
+
+        @media (max-width: 560px) {
+            .timeline li {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 860px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .offer-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+            .offer-list li {
+                display: flex;
+                gap: 18px;
+                align-items: flex-start;
+            }
+
+        .offer-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            background: var(--color-clay-soft);
+            border-radius: var(--radius-soft);
+        }
+
+        .offer-list h3 {
+            margin-bottom: 4px;
+        }
+
+        .offer-list p {
+            margin: 0;
+        }
+
+        .testimonial {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+            .testimonial blockquote {
+                margin: 0 0 20px;
+                font-family: var(--font-display);
+                font-style: italic;
+                font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+                color: var(--color-bark);
+                line-height: 1.45;
+            }
+
+            .testimonial figcaption {
+                color: var(--color-bark-soft);
+                font-size: 0.95rem;
+            }
+
+        .cta-banner-wrap {
+            padding: 0 0 88px;
+        }
+
+        .cta-banner-inner {
+            background: var(--color-moss);
+            border-radius: var(--radius-lg);
+            padding: 56px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        @media (max-width: 620px) {
+            .cta-banner-inner {
+                padding: 40px 28px;
+            }
+        }
+
+        .cta-banner-inner h2, .cta-banner-inner p {
+            color: var(--color-white);
+        }
+
+        .cta-banner-inner .btn-primary {
+            background: var(--color-white);
+            color: var(--color-moss-dark);
+        }
+
+            .cta-banner-inner .btn-primary:hover {
+                background: var(--color-cream-soft);
+            }
+    </style>
+
+</body>
 </html>
