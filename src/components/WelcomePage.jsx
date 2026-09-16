@@ -11,44 +11,13 @@
 export default WelcomePage;*/
 import { useState } from "react";
 import "./WelcomePage.css";
+import SiteHeader from "./SiteHeader.jsx";
 
 // Startsidan – hälsar besökare välkomna till Doggy Daycare
-const WelcomePage = ({ onStart }) => {
-    const [navOpen, setNavOpen] = useState(false);
-
+const WelcomePage = ({ onStart, onGoHome, onGoCatalog }) => {
     return (
         <>
-            {/* HEADER */}
-            <header className="site-header">
-                <div className="container">
-                    <a href="#top" className="logo" aria-label="Skogsgläntan Hunddagis, startsida">
-                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 3C10 3 5 9 5 16c0 8 5 13 12 15 7-2 12-7 12-15 0-7-5-13-12-13Z" fill="#566447" />
-                            <path d="M12 14c1.5 3 2.5 6 2.5 9M22 14c-1.5 3-2.5 6-2.5 9" stroke="#F3ECDC" strokeWidth="1.4" strokeLinecap="round" />
-                        </svg>
-                        Skogsgläntan
-                    </a>
-
-                    <button
-                        className="nav-toggle"
-                        aria-label="Öppna meny"
-                        aria-expanded={navOpen}
-                        onClick={() => setNavOpen((open) => !open)}
-                    >
-                        <span></span><span></span><span></span>
-                    </button>
-
-                    <nav className={`main-nav${navOpen ? " open" : ""}`}>
-                        <ul>
-                            <li><a href="#top" className="active">Hem</a></li>
-                            <li><a href="#dagen">En dag hos oss</a></li>
-                            <li><a href="#erbjudanden">Tjänster</a></li>
-                            <li><a href="#footer">Kontakt</a></li>
-                            <li><a href="#footer">Öppettider</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            <SiteHeader onGoHome={onGoHome} onGoCatalog={onGoCatalog} activePage="home" />
 
             <main>
                 {/* HERO */}

@@ -7,42 +7,55 @@ import "./App.css";
 
 
 const SCREENS = {
-  WELCOME: "welcome",
-  CATALOG: "catalog",
-  DETAIL: "detail"
+    WELCOME: "welcome",
+    CATALOG: "catalog",
+    DETAIL: "detail"
 };
 
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState(SCREENS.WELCOME);
-  const [selectedDog, setSelectedDog] = useState(null);
+    const [currentPage, setCurrentPage] = useState(SCREENS.WELCOME);
+    const [selectedDog, setSelectedDog] = useState(null);
 
-  const goToCatalog = () => setCurrentPage(SCREENS.CATALOG);
+    const goToCatalog = () => setCurrentPage(SCREENS.CATALOG);
 
-  const goToDetail = (dog) => {
-    setSelectedDog(dog);
-    setCurrentPage(SCREENS.DETAIL);
-  };
+    const goToDetail = (dog) => {
+        setSelectedDog(dog);
+        setCurrentPage(SCREENS.DETAIL);
+    };
 
-  const goBackToCatalog = () => {
-    setSelectedDog(null);
-    setCurrentPage(SCREENS.CATALOG);
-  };
+    const goBackToCatalog = () => {
+        setSelectedDog(null);
+        setCurrentPage(SCREENS.CATALOG);
+    };
 
-  return (
-    <div>
-      <nav className="main-nav">
-        <button onClick={() => setCurrentPage(SCREENS.WELCOME)}>Hem</button>
-        <button onClick={goToCatalog}>Katalog</button>
-      </nav>
+    const goHome = (sectionId) => {
+        setCurrentPage(SCREENS.WELCOME);
+        setTimeout(() => {
+            if (sectionId) {
+                const el = document.getElementById(sectionId);
+                if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                    return;
+                }
+            }
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+    };
 
-      {currentPage === SCREENS.WELCOME && <WelcomePage onStart={goToCatalog} />}
-      {currentPage === SCREENS.CATALOG && <CatalogPage onSelectDog={goToDetail} />}
-      {currentPage === SCREENS.DETAIL && (
-        <DogDetailPage dog={selectedDog} onBack={goBackToCatalog} />
-      )}
-    </div>
-  );
+    return (
+        <div>
+            {currentPage === SCREENS.WELCOME && (
+                <WelcomePage onStart={goToCatalog} onGoHome={goHome} onGoCatalog={goToCatalog} />
+            )}
+            {currentPage === SCREENS.CATALOG && (
+                <CatalogPage onSelectDog={goToDetail} onGoHome={goHome} onGoCatalog={goToCatalog} />
+            )}
+            {currentPage === SCREENS.DETAIL && (
+                <DogDetailPage dog={selectedDog} onBack={goBackToCatalog} onGoHome={goHome} onGoCatalog={goToCatalog} />
+            )}
+        </div>
+    );
 };
 
 export default App;
