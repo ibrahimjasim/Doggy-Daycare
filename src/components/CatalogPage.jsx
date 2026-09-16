@@ -1,6 +1,31 @@
-// Placeholder – fylls på med fetch mot API:t senare (Jonathans del)
-import DogData from "../components/DogData";
-const CatalogPage = () => {
+import { useEffect, useState } from "react";
+import { fetchDogs } from "../components/DogData";
+
+const CatalogPage = ({ onSelectDog }) => {
+  const [dogs, setDogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    fetchDogs()
+      .then((data) => {
+        setDogs(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError("Kunde inte apportera hundarna just nu...");
+        setLoading(false);
+      });
+  }, []);
+
+  const filteredDogs = dogs.filter((dog) =>
+    dog.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
+  if (loading) return <p>Apporterar hundar...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <section className="catalog-page">
       <h1>Våra hundar</h1>
