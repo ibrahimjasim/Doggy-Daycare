@@ -1,13 +1,29 @@
-import { useParams } from "react-router-dom";
+const DogDetailPage = ({ dog, onBack }) => {
+  if (!dog) {
+    return (
+      <section className="dog-detail-page">
+        <p>Hunden kunde inte hittas.</p>
+        <button onClick={onBack}>Tillbaka till katalogen</button>
+      </section>
+    );
+  }
 
-// Placeholder – fylls på med riktig hunddata baserat på :id senare (Ruths del)
-const DogDetailPage = () => {
-  const { id } = useParams(); // Läser ut hund-id:t från URL:en
+  const { name, breed, age, sex, img, present, owner } = dog;
 
   return (
     <section className="dog-detail-page">
-      <h1>Hundens detaljsida</h1>
-      <p>Visar information om hund med id: {id}</p>
+      <button onClick={onBack}>Tillbaka till katalogen</button>
+
+      <img src={img} alt={name} />
+      <h1>{name}</h1>
+      <p>Ras: {breed}</p>
+      <p>Ålder: {age} år</p>
+      <p>Kön: {sex === "female" ? "Tik" : "Hane"}</p>
+      <p>Status: {present ? "På plats" : "Hemma"}</p>
+
+      <h2>Ägare</h2>
+      <p>{owner.name} {owner.lastName}</p>
+      <p>Telefon: {owner.phoneNumber}</p>
     </section>
   );
 };
