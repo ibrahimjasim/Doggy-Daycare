@@ -1,76 +1,82 @@
 .catalog-page {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 .catalog-page h1 {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .search-input {
-    display: block;
-    width: 100%;
-    max-width: 340px;
-    padding: 12px 18px;
-    margin-bottom: 40px;
-    font-family: var(--font-body);
-    font-size: 0.98rem;
-    color: var(--color-bark);
-    background: var(--color-white);
-    border: 1.5px solid var(--color-line);
-    border-radius: var(--radius-pill);
-    outline: none;
-    transition: border-color 0.15s ease;
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  padding: 12px 18px;
+  margin-bottom: 40px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-bark);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  outline: none;
+  transition: border-color 0.15s ease;
 }
 
-    .search-input::placeholder {
-        color: var(--color-bark-soft);
-    }
+.search-input::placeholder {
+  color: var(--color-bark-soft);
+}
 
-    .search-input:focus {
-        border-color: var(--color-moss);
-    }
+.search-input:focus {
+  border-color: var(--color-moss);
+}
 
 .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 28px;
 }
 
 .dog-card {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 0 20px;
-    background: var(--color-white);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-soft);
-    overflow: hidden;
-    cursor: pointer;
-    text-align: center;
-    font-family: var(--font-body);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 0 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-soft);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-body);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-    .dog-card:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-soft);
-    }
+.dog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
 
-    .dog-card img {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        margin-bottom: 16px;
-    }
+.dog-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
 
-    .dog-card h3 {
-        margin: 0 16px 4px;
-        font-size: var(--fs-h3);
-    }
+.dog-card h3 {
+  margin: 0 16px 4px;
+  font-size: var(--fs-h3);
+}
 
-    .dog-card p {
-        margin: 0 16px;
-        color: var(--color-clay);
-        font-weight: 600;
-        font-size: var(--fs-small);
-    }
+.dog-card p {
+  margin: 0 16px;
+  color: var(--color-clay);
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.dog-catalog-breed {
+  text-transform: capitalize;
+}
