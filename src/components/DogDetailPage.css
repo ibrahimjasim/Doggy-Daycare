@@ -1,0 +1,128 @@
+.dog-detail-page {
+    padding-top: 40px;
+}
+
+.dog-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1.5px solid var(--color-bark);
+    border-radius: var(--radius-pill);
+    color: var(--color-bark);
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+    .dog-detail-back:hover {
+        border-color: var(--color-moss);
+        color: var(--color-moss-dark);
+    }
+
+.dog-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+@media (max-width: 760px) {
+    .dog-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+.dog-detail-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-soft);
+    border: 1px solid var(--color-line);
+    background: var(--color-white);
+}
+
+.dog-detail-info h1 {
+    margin-bottom: 4px;
+}
+
+.dog-detail-breed {
+    color: var(--color-clay);
+    font-weight: 600;
+    font-size: var(--fs-small);
+    margin-bottom: 28px;
+    text-transform: capitalize;
+}
+
+.dog-detail-facts {
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+    .dog-detail-facts li {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-line);
+        font-size: var(--fs-body);
+    }
+
+    .dog-detail-facts .fact-label {
+        color: var(--color-bark-soft);
+        font-weight: 500;
+    }
+
+    .dog-detail-facts .fact-value {
+        color: var(--color-bark);
+        font-weight: 600;
+    }
+
+.dog-detail-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-small);
+    font-weight: 600;
+}
+
+    .dog-detail-status.present {
+        background: var(--color-clay-soft);
+        color: var(--color-clay);
+    }
+
+    .dog-detail-status.home {
+        background: var(--color-line);
+        color: var(--color-bark-soft);
+    }
+
+.dog-detail-owner {
+    background: var(--color-white);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-soft);
+    padding: 24px 28px;
+}
+
+    .dog-detail-owner h2 {
+        font-size: var(--fs-h3);
+        margin-bottom: 12px;
+    }
+
+    .dog-detail-owner p {
+        margin: 0 0 6px;
+        color: var(--color-bark-soft);
+    }
+
+    .dog-detail-owner p:last-child {
+        margin-bottom: 0;
+    }
