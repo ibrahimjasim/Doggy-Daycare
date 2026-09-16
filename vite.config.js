@@ -3,6 +3,11 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Doggy-Daycare/",
-  plugins: [react()],
+    base: "/Doggy-Daycare/",
+    plugins: [react()],
+    server: {
+        watch: {
+            ignored: ['**/.vs/**'],
+        },
+    },
 });
