@@ -3,7 +3,6 @@ import WelcomePage from "./components/WelcomePage";
 import CatalogPage from "./components/CatalogPage";
 import DogDetailPage from "./components/DogDetailPage";
 import "./App.css";
-// import DogData from "./components/DogData";
 
 
 const SCREENS = {
