@@ -87,12 +87,6 @@ const CatalogPage = ({ onSelectDog, onGoHome, onGoCatalog }) => {
             </button>
             <button
               className="sort-button"
-              onClick={() => setSortOption(SORTING.PRESENT)}
-            >
-              Närvaro
-            </button>
-            <button
-              className="sort-button"
               id="reset-sort"
               onClick={() => setSortOption("")}
             >
@@ -116,14 +110,18 @@ const CatalogPage = ({ onSelectDog, onGoHome, onGoCatalog }) => {
                 onClick={() => onSelectDog(dog)}
               >
                 <DogImage src={dog.img} alt={dog.name} />
-                <div className="info-conatiner">
+                <div className="info-container">
                   <div className="info-column">
                     <h3>{dog.name}</h3>
                     <p className="dog-catalog-breed">{dog.breed}</p>
                   </div>
                   <div className="info-column">
-                    <p className="dog-catalog-year">{dog.age} år</p>
-                    <p className="dog-catalog-sex">{dog.sex}</p>
+                    <p className="dog-catalog-age">{dog.age} år</p>
+                    <p
+                      className={`dog-catalog-sex ${dog.sex === "female" ? "female" : "male"}`}
+                    >
+                      {dog.sex === "female" ? "Tik" : "Hane"}
+                    </p>
                   </div>
                 </div>
               </button>
