@@ -109,18 +109,26 @@ const CatalogPage = ({ onSelectDog, onGoHome, onGoCatalog }) => {
                 className="dog-card"
                 onClick={() => onSelectDog(dog)}
               >
-                <DogImage src={dog.img} alt={dog.name} />
+                <DogImage src={dog.img} alt={dog.name || "Okänd hund"} />
                 <div className="info-container">
                   <div className="info-column">
-                    <h3>{dog.name}</h3>
-                    <p className="dog-catalog-breed">{dog.breed}</p>
+                    <h3>{dog.name || "Namn saknas"}</h3>
+                    <p className="dog-catalog-breed">
+                      {dog.breed || "[Okänd ras]"}
+                    </p>
                   </div>
                   <div className="info-column">
-                    <p className="dog-catalog-age">{dog.age} år</p>
+                    <p className="dog-catalog-age">
+                      {dog.age != null ? `${dog.age} år` : "-"}
+                    </p>
                     <p
                       className={`dog-catalog-sex ${dog.sex === "female" ? "female" : "male"}`}
                     >
-                      {dog.sex === "female" ? "Tik" : "Hane"}
+                      {dog.sex === "female"
+                        ? "Tik"
+                        : dog.sex === "male"
+                          ? "Hane"
+                          : "-"}
                     </p>
                   </div>
                 </div>
