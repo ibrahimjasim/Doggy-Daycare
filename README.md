@@ -1,16 +1,88 @@
-# React + Vite
+# Doggy Daycare — Skogsgläntan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite web app for **Skogsgläntan**, a fictional dog daycare. It presents the daycare's services and daily schedule, and lets visitors browse a catalog of the dogs currently enrolled, with a detail page for each dog and its owner's contact info.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Welcome page** — hero section, daily schedule timeline, services offered, and contact/footer info.
+- **Dog catalog** — searchable grid of dogs, fetched live from a remote JSON API.
+- **Dog detail page** — breed, age, sex, presence status, and owner contact details for a selected dog.
+- Client-side navigation between screens (no routing library state, just React state in [App.jsx](src/App.jsx)).
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/) for dev server and build
+- [react-router-dom](https://reactrouter.com/) (dependency)
+- ESLint for linting
+- [gh-pages](https://www.npmjs.com/package/gh-pages) for deployment to GitHub Pages
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+Start the dev server with hot module reloading:
+
+```bash
+npm run dev
+```
+
+### Build
+
+Create a production build in `dist/`:
+
+```bash
+npm run build
+```
+
+### Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Deploy
+
+Build and publish the `dist/` folder to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+## Project structure
+
+```
+src/
+├── App.jsx                  # Screen state and navigation
+├── components/
+│   ├── WelcomePage.jsx      # Landing page: hero, schedule, services, footer
+│   ├── CatalogPage.jsx      # Searchable list of dogs
+│   ├── DogDetailPage.jsx    # Single dog's details and owner info
+│   ├── DogData.jsx          # Fetches dog data from the remote API
+│   ├── DogImage.jsx         # Dog image component
+│   └── SiteHeader.jsx       # Shared site header/navigation
+└── assets/                  # Images and icons
+```
+
+## Data source
+
+Dog data is fetched from a [jsonbin.io](https://jsonbin.io/) bin (see [DogData.jsx](src/components/DogData.jsx)) and includes each dog's name, breed, age, sex, presence status, image, and owner contact info.
