@@ -128,3 +128,44 @@ p.dog-catalog-age {
 .info-column:last-child {
   align-items: flex-end;
 }
+
+.sort-buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  background: var(--color-moss);
+  color: var(--color-white);
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.sort-button:hover {
+  transform: translateY(-1px);
+  background: var(--color-moss-dark);
+}
+
+#reset-sort {
+  background: transparent;
+  border-color: var(--color-bark);
+  color: var(--color-bark);
+}
+#reset-sort:hover {
+  border-color: var(--color-moss);
+  color: var(--color-moss-dark);
+}
