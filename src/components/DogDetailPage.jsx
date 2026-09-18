@@ -23,7 +23,7 @@ const DogDetailPage = ({ dog, onBack, onGoHome, onGoCatalog }) => {
     );
   }
 
-  const { name, breed, age, sex, img, present, owner } = dog;
+  const { name, breed, age, sex, present, owner } = dog;
 
   return (
     <>

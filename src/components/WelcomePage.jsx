@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./WelcomePage.css";
 import SiteHeader from "./SiteHeader.jsx";
+import dogsInWoods from "../assets/dogs_in_woods.jpg";
+import dogsOnField from "../assets/dogs_on_field.jpg";
 
 // Startsidan – hälsar besökare välkomna till Skogsgläntan
 const WelcomePage = ({ onStart, onGoHome, onGoCatalog }) => {
@@ -33,16 +35,20 @@ const WelcomePage = ({ onStart, onGoHome, onGoCatalog }) => {
               </div>
             </div>
 
-            <div
-              className="hero-visual"
-              role="img"
-              aria-label="Hundar som leker tillsammans på en skogspromenad"
-            >
-              <div className="hero-visual-main"></div>
-              <div className="hero-visual-accent"></div>
+            <div className="hero-visual">
+              <img
+                className="hero-visual-main"
+                src={dogsInWoods}
+                alt="Hundar som leker tillsammans på en skogspromenad"
+              />
+              <img
+                className="hero-visual-accent"
+                src={dogsOnField}
+                alt="Hundar på förmiddagspromenad på en äng"
+              />
               <span className="hero-visual-note">
-                Foto: hundarna på förmiddagspromenad
-                <br />— byt ut mot egna bilder
+                Hundarna på promenad
+                <br />
               </span>
             </div>
           </div>
