@@ -1,6 +1,10 @@
 # Doggy Daycare — Skogsgläntan
 
-![Skogsgläntan collage](assets/skogsglantan_collage.png)
+## Webbpage
+
+https://ibrahimjasim.github.io/Doggy-Daycare/
+
+![Skogsgläntan collage](src/assets/skogsglantan_collage.png)
 
 A React + Vite web app for **Skogsgläntan**, a fictional dog daycare. It presents the daycare's services and daily schedule, and lets visitors browse a catalog of the dogs currently enrolled, with a detail page for each dog and its owner's contact info.
 
